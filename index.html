@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+<html>
+
+<!--
+A block of code to start the page at the top when
+loaded or refreshed to ensure the selection process
+is reset upon every fresh start.
+-->
+
+<script>
+  window.onbeforeunload = function () {
+  window.scrollTo(0, 0);}
+</script>
+
+<!--
+This first block is all of the CSS and stylings for the page,
+including fonts, colors, margins, etc. Directly underneath
+this comment is the page's main styling.
+-->
+
+<style>
+* {
+margin: 0;
+padding: 0;
+}
+body {
+  width: 100%;
+  padding-top: 80px;
+  text-align: center;
+  font-family: 'Sen', sans-serif;
+}
+h1, h2 {
+  display: inline-block;
+  background: #fff;
+}
+h1 {
+  font-size: 50px
+}
+h2 {
+  font-size: 23px;
+}
+.divider
+{
+  position: relative;
+	margin-top: 45px;
+  margin-bottom: 25px;
+	height: 1px;
+}
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, black, transparent);
+}
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: #FFFFFF;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+}
+
+/*
+Below this comment is the styling for the checkout button,
+including the link to the button's background image.
+*/
+
+.button {
+  display: inline-block;
+  height: auto;
+  width: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: black;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  font-size: 2vw;
+  letter-spacing: 7px;
+  border: none;
+  transition-duration: .4s;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:active {
+  background-color: black;
+}
+
+/*
+Below this comment is the styling for the first step
+buttons.
+*/
+
+.btngift {
+  display:inline-block;
+  height: auto;
+  width: 10%;
+  padding: 8%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 1%;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/IK6PTKk.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btngift:hover {
+  background-image: url("https://i.imgur.com/PhQWaK9.png");
+}
+.btnyou {
+  display:inline-block;
+  height: auto;
+  width: 10%;
+  padding: 8%;
+  margin-right: 0px;
+  margin-left: 8%;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/NmhENOJ.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnyou:hover {
+  background-image: url("https://i.imgur.com/ki2rwHf.png");
+}
+
+/*
+Below this comment is the styling for the list of icons
+that display the coffee options for the second step.
+*/
+
+.coffeeopt {
+  display: inline-block;
+  height:auto;
+  width:9%;
+  padding: 5%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 2%;
+  cursor: pointer;
+  background-image: url(https://i.imgur.com/4N3SqyA.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 4px solid black;
+  outline: none;
+  transition-duration: .2s;
+}
+
+.coffeeopt:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*
+Below this comment is the styling for the third step
+buttons.
+*/
+
+.btnbean {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 2%;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/CBCN6PL.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnbean:hover {
+  background-image: url("https://i.imgur.com/bF3ogLn.png");
+}
+
+.btnfrench {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/v4cv0zK.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnfrench:hover {
+  background-image: url("https://i.imgur.com/H2mMy5p.png");
+}
+    
+.btndrip {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/OWXAm7N.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btndrip:hover {
+  background-image: url("https://i.imgur.com/5wux7F9.png");
+}
+
+.btnchemx {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 4%;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/eYaIbo4.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnchemx:hover {
+  background-image: url("https://i.imgur.com/JkTMZ86.png");
+}
+
+.btnkcup {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 4%;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/jaCnNgE.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnkcup:hover {
+  background-image: url("https://i.imgur.com/Qp5gMLN.png");
+}
+
+.btnesp {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 4%;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/v3SLTWT.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnesp:hover {
+  background-image: url("https://i.imgur.com/W1Wf4rO.png");
+}
+
+/*
+Below this comment is the styling for the fourth step
+buttons.
+*/
+
+.btnsmall {
+  display:inline-block;
+  height: auto;
+  width: 10%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 0px;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/zYp3YZ7.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnsmall:hover {
+  background-image: url("https://i.imgur.com/i5n7PHF.png");
+}
+.btnbig {
+  display:inline-block;
+  height: auto;
+  width: 10%;
+  padding: 7%;
+  margin-right: 0px;
+  margin-left: 4%;
+  margin-top: 3%;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/9i85SA1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnbig:hover {
+  background-image: url("https://i.imgur.com/i4AmqZo.png");
+}
+
+/*
+Below this comment is the styling for the fifth step
+buttons.
+*/
+
+.btnfour {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 4%;
+  padding-top: 3%;
+  margin-right: 0px;
+  margin-left: 0px;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/IOWIIKR.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnfour:hover {
+  background-image: url("https://i.imgur.com/wUDnKTo.png");
+}
+.btntwo {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 4%;
+  padding-top: 3%;
+  margin-right: 0px;
+  margin-left: 0px;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/GR9oElK.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btntwo:hover {
+  background-image: url("https://i.imgur.com/lsM3n44.png");
+}
+.btnone {
+  display:inline-block;
+  height: auto;
+  width: 14%;
+  padding: 4%;
+  padding-top: 3%;
+  margin-right: 0px;
+  margin-left: 0px;
+  cursor:pointer;
+  background-image: url("https://i.imgur.com/1rOWLXZ.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:none;
+  outline:none;
+  transition-duration: .4s;
+}
+.btnone:hover {
+  background-image: url("https://i.imgur.com/f9Copk3.png");
+}
+
+/*
+Below this comment are all the divider classes for hiding
+and showing the different steps upon selections.
+*/
+
+#secondstp {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s;
+}
+#thirdstp {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s;
+}
+#fourthstp {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s;
+}
+#fifthstp {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s;
+}
+#sixthstp {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .8s;
+}
+</style>
+
+<!--
+The code below this comment contains all of the main functionality
+and the skeleton of the subscription selection tree, with the
+various sections being divided into their steps in the process
+respectively.
+-->
+
+<body>
+
+<!--FIRST STEP-->
+<div class="divider div-transparent div-arrow-down"></div>
+<img src="https://i.imgur.com/NtK25yY.png" alt="first step" style="width:10%;height:auto;margin:0px 0px 0px;" align="center">
+<div></div>
+<button class="btngift" onclick="twoReveal()"></button>
+<button class="btnyou" onclick="twoReveal()"></button>
+
+<!--SECOND STEP-->
+<div id="secondstp">
+<div class="divider div-transparent div-arrow-down"></div>
+<img src="https://i.imgur.com/LNyecZg.png" alt="second step" style="width:10%;height:auto;margin:0px 0px 0px;" align="center">
+<div></div>
+<img src="https://i.imgur.com/CDf97rs.png" style="width:37%;height:auto;margin:0px 0px 0px 0px;">
+<div></div>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/4N3SqyA.jpg); margin-right: 3%;"></button>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/eSSnKd8.jpg); margin-right: 3%;"></button>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/ML6zWwP.jpg); margin-right: 3%;"></button>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/5XZhkId.jpg);"></button>
+<div></div>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/3kYtprY.jpg); margin-right: 3%;"></button>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/adQRzIG.jpg); margin-right: 3%;"></button>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/29BK1lM.jpg); margin-right: 3%;"></button>
+<button class="coffeeopt" onclick="threeReveal()" style="background-image: url(https://i.imgur.com/yH99CVp.jpg);"></button>
+</div>
+
+<!--THIRD STEP-->
+<div id="thirdstp">
+<div class="divider div-transparent div-arrow-down"></div>
+<img src="https://i.imgur.com/YJvaZtS.png" alt="third step" style="width:10%;height:auto;margin:0px 0px 0px;" align="center">
+<div></div>
+<button class="btnbean" onclick="fourReveal()"></button>
+<button class="btnfrench" onclick="fourReveal()"></button>
+<button class="btndrip" onclick="fourReveal()"></button>
+<div></div>
+<button class="btnchemx" onclick="fourReveal()"></button>
+<button class="btnkcup" onclick="fourReveal()"></button>
+<button class="btnesp" onclick="fourReveal()"></button>
+</div>
+
+<!--FOURTH STEP-->
+<div id="fourthstp">
+<div class="divider div-transparent div-arrow-down"></div>
+<img src="https://i.imgur.com/VwJg4BS.png" alt="fourth step" style="width:10%;height:auto;margin:0px 0px 0px;" align="center">
+<div></div>
+<button class="btnsmall" onclick="fiveReveal()"></button>
+<button class="btnbig" onclick="fiveReveal()"></button>
+</div>
+
+<!--FIFTH STEP-->
+<div id="fifthstp">
+<div class="divider div-transparent div-arrow-down"></div>
+<img src="https://i.imgur.com/JSvxrC9.png" alt="fifth step" style="width:10%;height:auto;margin:0px 0px 0px;" align="center">
+<div></div>
+<img src="https://i.imgur.com/j9CbyGg.png" alt="a gift" style="width:13%;height:auto;margin:12px 0px 0px 0px;" align="center">
+<div></div>
+<button class="btnfour" onclick="sixReveal()"></button>
+<button class="btntwo" onclick="sixReveal()"></button>
+<button class="btnone" onclick="sixReveal()"></button>
+</div>
+
+<!--SIXTH STEP-->
+<div id="sixthstp">
+<div class="divider div-transparent div-arrow-down"></div>
+<img src="https://i.imgur.com/fdQPFq0.png" alt="sixth step" style="width:10%;height:auto;margin:0px 0px 0px;" align="center">
+<div></div>
+<img src="https://i.imgur.com/7j596NQ.png" alt="a gift" style="width:10%;height:auto;margin:0px 10% 0px 0px;" align="center">
+<button class="button" style="margin: 0px 0px 8% 0px;">SUBSCRIBE</button>
+</div>
+
+<!--
+The code below this comment contains all of the javascript
+code that is needed to add functionality to the buttons
+throughout the selection tree. This includes the showing/hiding
+of the steps, the auto-scrolling of the page to the next step,
+and the integration with shopify.
+-->
+  
+<!--SECOND STEP-->
+<script>
+function twoReveal() {
+  document.getElementById("secondstp").style.visibility = "visible";
+  document.getElementById("secondstp").style.opacity = "1";
+  var steptwo = document.getElementById("secondstp");
+  steptwo.scrollIntoView({ behavior: 'smooth'});}
+</script>
+
+<!--THIRD STEP-->
+<script>
+function threeReveal() {
+  document.getElementById("thirdstp").style.visibility = "visible";
+  document.getElementById("thirdstp").style.opacity = "1";
+  var stepthree = document.getElementById("thirdstp");
+  stepthree.scrollIntoView({ behavior: 'smooth'});}
+</script>
+
+<!--FOURTH STEP-->
+<script>
+function fourReveal() {
+  document.getElementById("fourthstp").style.visibility = "visible";
+  document.getElementById("fourthstp").style.opacity = "1";
+  var stepfour = document.getElementById("fourthstp");
+  stepfour.scrollIntoView({ behavior: 'smooth'});}
+</script>
+
+<!--FIFTH STEP-->
+<script>
+function fiveReveal() {
+  document.getElementById("fifthstp").style.visibility = "visible";
+  document.getElementById("fifthstp").style.opacity = "1";
+  var stepfive = document.getElementById("fifthstp");
+  stepfive.scrollIntoView({ behavior: 'smooth'});}
+</script>
+
+<!--SIXTH STEP-->
+<script>
+function sixReveal() {
+  document.getElementById("sixthstp").style.visibility = "visible";
+  document.getElementById("sixthstp").style.opacity = "1";
+  var stepsix = document.getElementById("sixthstp");
+  stepsix.scrollIntoView({ behavior: 'smooth'});}
+</script>
+
+</html>
