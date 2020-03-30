@@ -21,10 +21,7 @@ this comment is the page's main styling.
 -->
 
 <style>
-* {
-margin: 0;
-padding: 0;
-}
+
 body {
   width: 100%;
   padding-top: 80px;
@@ -486,12 +483,14 @@ buttons.
 Below this comment is the styling for the checkout button.
 */
 
-.button {
+.subbutton {
   display: inline-block;
   height: auto;
-  width: 42%;
+  width: auto;
   padding-top: 2%;
   padding-bottom: 2%;
+  padding-right: 3%;
+  padding-left: 3%;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -499,17 +498,17 @@ Below this comment is the styling for the checkout button.
   color: #fff;
   background-color: black;
   font-family: 'Liu Jian Mao Cao', cursive;
-  font-size: 5vw;
-  letter-spacing: 7px;
+  font-size: 5vh;
+  letter-spacing: 1vh;
   border: none;
   transition-duration: .4s;
 }
 
-.button:hover {
+.subbutton:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.button:active {
+.subbutton:active {
   background-color: black;
 }
 
@@ -596,6 +595,13 @@ and showing the different steps upon selections.
   .btnone {
     width: 45%;
     padding: 12%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .subbutton {
+    font-size: 4vw;
+    letter-spacing: .4vw;
   }
 }
 
@@ -697,7 +703,7 @@ respectively.
 <img src="https://i.imgur.com/fdQPFq0.png" alt="sixth step" style="width:18%;height:auto;margin:-3% 0px 0px 0px;" align="center">
 <div></div>
 <img src="https://i.imgur.com/7j596NQ.png" alt="all done" style="width:24%;height:auto;margin:0px 10% 0px 0px;" align="center">
-<button class="button" style="margin-left: 8%; margin-bottom: 20%;">SUBSCRIBE</button>
+<button class="subbutton" style="margin-left: 8%; margin-bottom: 20%;">SUBSCRIBE</button>
 </div>
 
 <!--
