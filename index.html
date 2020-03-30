@@ -518,28 +518,23 @@ and showing the different steps upon selections.
 */
 
 #secondstp {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: opacity .8s;
 }
 #thirdstp {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: opacity .8s;
 }
 #fourthstp {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: opacity .8s;
 }
 #fifthstp {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: opacity .8s;
 }
 #sixthstp {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   transition: opacity .8s;
 }
 
@@ -717,8 +712,7 @@ and the integration with shopify.
 <!--SECOND STEP-->
 <script>
 function twoReveal() {
-  document.getElementById("secondstp").style.visibility = "visible";
-  document.getElementById("secondstp").style.opacity = "1";
+  document.getElementById("secondstp").style.display = "block";
   var steptwo = document.getElementById("secondstp");
   steptwo.scrollIntoView({ behavior: 'smooth'});}
 </script>
@@ -726,8 +720,7 @@ function twoReveal() {
 <!--THIRD STEP-->
 <script>
 function threeReveal() {
-  document.getElementById("thirdstp").style.visibility = "visible";
-  document.getElementById("thirdstp").style.opacity = "1";
+  document.getElementById("thirdstp").style.display = "block";
   var stepthree = document.getElementById("thirdstp");
   stepthree.scrollIntoView({ behavior: 'smooth'});}
 </script>
@@ -735,8 +728,7 @@ function threeReveal() {
 <!--FOURTH STEP-->
 <script>
 function fourReveal() {
-  document.getElementById("fourthstp").style.visibility = "visible";
-  document.getElementById("fourthstp").style.opacity = "1";
+  document.getElementById("fourthstp").style.display = "block";
   var stepfour = document.getElementById("fourthstp");
   stepfour.scrollIntoView({ behavior: 'smooth'});}
 </script>
@@ -744,8 +736,7 @@ function fourReveal() {
 <!--FIFTH STEP-->
 <script>
 function fiveReveal() {
-  document.getElementById("fifthstp").style.visibility = "visible";
-  document.getElementById("fifthstp").style.opacity = "1";
+  document.getElementById("fifthstp").style.display = "block";
   var stepfive = document.getElementById("fifthstp");
   stepfive.scrollIntoView({ behavior: 'smooth'});}
 </script>
@@ -753,8 +744,7 @@ function fiveReveal() {
 <!--SIXTH STEP-->
 <script>
 function sixReveal() {
-  document.getElementById("sixthstp").style.visibility = "visible";
-  document.getElementById("sixthstp").style.opacity = "1";
+  document.getElementById("sixthstp").style.display = "block";
   var stepsix = document.getElementById("sixthstp");
   stepsix.scrollIntoView({ behavior: 'smooth'});}
 </script>
